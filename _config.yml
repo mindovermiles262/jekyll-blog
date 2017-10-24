@@ -5,9 +5,9 @@ url: ""
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
   # Meta
-  title: Three Steps Forward
+  title: Three Quick Steps
   avatar: assets/img/avatar.png
-  favicon: assets/favicon.ico
+  favicon: assets/mountain-favicon-alt.png
   gravatar: d811beaa78cebee0955ff8521753f467
   description: "Andy Duss's personal writings, thoughts, and feelings"
 
