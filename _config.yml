@@ -16,7 +16,7 @@ theme_settings:
      <p>Thoughts and Writings from Andy Duss</p>
   header_text_feature_image:
   footer_text: >
-   Powered by Coffee and <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>, a theme for <a href="https://jekyllrb.com/">Jekyll</a>
+   Powered by Black Coffee and <a href="https://jekyllrb.com/">Jekyll</a> disguised by <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>
 
   # Icons
   rss: false
