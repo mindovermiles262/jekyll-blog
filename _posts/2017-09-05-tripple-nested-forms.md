@@ -1,5 +1,5 @@
 ---
-title: Tripple Nested Forms in Rails 5
+title: Triple Nested Forms in Rails 5
 layout: post
 date: 2017-09-05
 feature-img: "assets/img/sample_feature_img.png"
