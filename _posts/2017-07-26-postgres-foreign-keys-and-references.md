@@ -1,3 +1,9 @@
+---
+title: Postgres Foreign Keys and References
+layout: post
+date: 2017-07-26
+---
+
 Few things in the world are more frustrating to a developer as when you push your code to Heroku, and it does not work. Why? Because you changed databases from SQLite3 to PostgreSQL.
 
 While writing my latest Ruby on Rails application, I ran into this problem when trying to migrate my database on Heroku:
