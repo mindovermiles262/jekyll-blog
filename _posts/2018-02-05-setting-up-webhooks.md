@@ -4,5 +4,5 @@ date: 2018-02-05
 layout: post
 ---
 
-Setting up Github Webhooks
+Setting up Github Webhooks is a simple way to run many common tasks with setting up a website
 
