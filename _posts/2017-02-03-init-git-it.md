@@ -1,6 +1,7 @@
 ---
 layout: post
 title: init (git it?)
+date: 2017-02-03
 ---
 
 Today is the start of something new. Let me explain –
