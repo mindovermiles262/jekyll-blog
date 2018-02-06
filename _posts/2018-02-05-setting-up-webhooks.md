@@ -5,11 +5,11 @@ layout: post
 tags: automation github jekyll
 ---
 
-Setting up Github Webhooks is a simple way to run many common tasks with setting up a website.  In this example I will be showing you how to enable an automated script to deploy your Jekyll blog when a merge occurs on a specified branch.
+Setting up Webhooks with Github is a simple way to start many common tasks when deploying a website. In this tutorial I will be showing you how to create an automated script to deploy your Jekyll blog when a merge occurs on a specified branch.
 
 ### Overview
 
-In this tutorial, we will be using an existing Jekyll blog, automating the process of building the site when a new change is merged into the `deploy` branch on GitHub.  To do this we will need the following:
+In this tutorial, we will be using an existing Jekyll blog and automating the process of building the site when a new change is merged into the `deploy` branch on GitHub.  To do this we will need the following:
 
 * An existing Jekyll Blog running on a server
 * Access to `sudo` user and the blog repository on Github
@@ -19,10 +19,10 @@ From a high level, we can explain the process as the following:
 
 1. We make changes to the blog (write a new post) and push to Github's `master` branch
 2. We make and accept a Pull Request (PR) from `master` to `deploy`
-3. Github sends a Webhook HTML message to our server, which is listening for said message.
+3. Github sends a webhook HTML message to our server, which is listening for this message.
 4. Our server checks that the change was made to the `deploy` branch
 5. Our server pulls the change
-6. Our server rebuilds the Jekyll blog via `jekyll build`
+6. Our server rebuilds the Jekyll blog via the command `jekyll build`
 
 All code for this tutorial can be found [here](https://github.com/mindovermiles262/jekyll-webhooks)
 
@@ -70,25 +70,23 @@ With that, we can set up our Github Webhooks.
 ### Configuring Github
 The next step is to enable webhooks.  Webhooks are simply HTTP messages sent to our server each time an action occurs on Github. They are highly customizable and are very useful. For this project we will be using the default settings.
 
-Go to your Jekyll blog repository on Github and go into the Settings menu.  Select the `Webhooks` tab from the side and click `Add webhook`
+Go to your Jekyll blog repository on Github and then go into the Settings menu.  Select the "Webhooks" tab from the side and click "Add webhook"
 
-In the `Payload URL` field, enter your server's IP address, followed by the port you want to use and route. For example, if my server IP address was `123.123.123.123` and I was using port 6789, my URL would be `http://123.123.123.123:6789/update-blog`
+In the `Payload URL` field, enter your server's IP address, followed by the port you want to use and route. For example, if my server IP address was 123.123.123.123 and I was using port 6789, my URL would be `http://123.123.123.123:6789/update-blog`
 
-Change the content type to `application/json`
+Change the content type to `application/json` so the message content is sent in a nice JSON format.
 
 With that complete we can click "Add webhook" and test it out.
 
 ### Testing our Webhook
 
-With the Webhook created, go back into it by selecting the "Edit" button. At the bottom of the page you should now see a "Recent Deliveries" section. Click on the only delivery to expand it. If everything has been set up properly, the delivery should be successful (Response 200).  If you go back to your server, you should see a new line with the content "Update blog received". If not, you will need to ensure that your server is running and accessible to the world.
+With the Webhook created, go back into it by selecting the "Edit" button. At the bottom of the page you should now see a "Recent Deliveries" section. Click on the only delivery notification to expand it. If everything has been set up properly, the delivery should be successful (Response 200).  If you go back to your server, you should see a new line with the content "Update blog received". If not, you will need to ensure that your server is running and accessible to the world (Check your firewall and port forwarding).
 
 ### Automagically building on update
-Now that our server is running and accepting webhook messages, we can start automating the build process.  In a typical setup, jekyll blogs are built by issuing the `jekyll build` command from the root directory of the blog.  Let's make a new shell script to do this for us:
+Now that our server is running and accepting webhook messages, we can start automating the build process.  In a typical setup, jekyll blogs are built by issuing the `jekyll build` command from the root directory of the blog.  Let's make a new shell script, called `update-blog.sh` to do this for us:
 
 ```bash
 #!/bin/bash
-
-# webhooks/update-blog.sh
 
 echo "Changing Directories"
 cd /home/your-name/www/blog
@@ -100,7 +98,7 @@ jekyll build
 
 Test the above script by running `./update-blog` in your terminal.
 
-We can now update our server to run the script when a new webhook is received:
+We now set our server to run the update-blog script when a webhook is received:
 
 ```ruby
 # webhooks/server.rb
@@ -141,7 +139,7 @@ Success! You now have an auto-updating blog!
 
 ### Listening for specific events
 
-That's great we now have an auto-updating blog, but what if we want to write a draft post and don't want to deploy it?  We can do that using branches. We can set up our server to check of the push was made to the `deploy` branch. If it was we will update the blog. If not we won't do anything.  Let's make this change now.
+That's great! We now have an auto-updating blog, but what if we want to write a draft post and don't want to deploy it?  We can do that using branches. We can set up our Sinatra server to check of the push was made to the `deploy` branch. If it was we will update the blog. If not, we won't do anything.  Let's make this change now.
 
 Each time Github sends a webhook, it will send some information along with it.  We can print this information by adding to our `server.rb` file:
 
@@ -154,7 +152,13 @@ post '/update-blog' do
 end
 ```
 
-The branch information we are looking for should be the first data to be sent: `{"ref"=>"refs/heads/deploy" ...`.  We can add a simple `if` statement to our server to check if we deployed to the `deploy` branch:
+The branch information we are looking for should be the first data to be sent: 
+
+```bash
+{"ref"=>"refs/heads/deploy" ...
+```
+
+We can add a simple `if` statement to our Sinatra server to check if we posted to the `deploy` branch:
 
 ```ruby
 # webhooks/server.rb
@@ -182,11 +186,10 @@ Now if you push to your `master` branch you should receive a message in your ser
 
 The last thing we need to do is to start the Sinatra server at system start. This will ensure that, should our server crash and restart, our Sinatra server will restart and be able to update our blog without having to log in.
 
-We will be using a handy program called `tmux` to do this.  Tmux is a program that allows terminals to be 'detached' (run in the background) and continue without the terminal window being open. Let's write a cron script to start our Sinatra server.
+We will be using a handy program called `tmux` to do this.  Tmux is a program that allows terminals to be 'detached' (run in the background) and continue without the terminal window being open. Let's write a cron script (named `start-server.cron`) to start our Sinatra server.
 
 ```bash
 #!/bin/bash
-# webhooks/start-server.cron
 
 /bin/sleep 5
 
