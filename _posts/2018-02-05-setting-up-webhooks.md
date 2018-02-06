@@ -44,9 +44,9 @@ end
 
 ```
 
-Save and exit, then start the server with `ruby server.rb`.  If you receive a warning about Sinatra not being installed, install it with `gem install sinatra`
+Save and exit, then start the server with `ruby server.rb -o 0.0.0.0 -p 6789` specifying the host (`-o`) and the port (`-p`).  If you receive a warning about Sinatra not being installed, install it with `gem install sinatra`
 
-Now open your web browser and go to `http://localhost:4567/testing` and you should see a message, "Sinatra Server Listening." You should also see the same message in your terminal.  Our web server is now working and listening!
+Now open your web browser and go to `http://localhost:6789/testing` and you should see a message, "Sinatra Server Listening." You should also see the same message in your terminal.  Our web server is now working and listening!
 
 Now that our server is running we can configure it to listen for the webhooks.  Let's create a new route on the server for this purpose:
 
@@ -138,3 +138,78 @@ Blog Updated
 ```
 
 Success! You now have an auto-updating blog!
+
+### Listening for specific events
+
+That's great we now have an auto-updating blog, but what if we want to write a draft post and don't want to deploy it?  We can do that using branches. We can set up our server to check of the push was made to the `deploy` branch. If it was we will update the blog. If not we won't do anything.  Let's make this change now.
+
+Each time Github sends a webhook, it will send some information along with it.  We can print this information by adding to our `server.rb` file:
+
+```
+...
+post '/update-blog' do
+  # system('/home/your-name/webhooks/update-blog.sh')
+  # puts "Blog Updated"
+  puts JSON.parse(request.body.read)
+end
+```
+
+The branch information we are looking for should be the first data to be sent: `{"ref"=>"refs/heads/deploy" ...`.  We can add a simple `if` statement to our server to check if we deployed to the `deploy` branch:
+
+```
+# webhooks/server.rb
+require 'sinatra'
+require 'json'
+
+get '/testing' do
+  puts "Sinatra Server Listening"
+  "<h1>Sinatra Server Listening</h1>"
+end
+
+post '/update-blog' do
+  if JSON.parse(request.body.read)["ref"] == 'refs/heads/deploy'
+    system('/home/your-name/webhooks/update-blog.sh')
+    puts "Blog Updated"
+  else
+    puts "Not pushed to 'deploy' branch"
+  end
+end
+```
+
+Now if you push to your `master` branch you should receive a message in your server terminal saying "Not pushed to 'deploy' branch". If you then create a PR and merge the changes from `master` into `deploy`, your blog should automatically update.  Pretty simple.
+
+### Starting Server at System Start
+
+The last thing we need to do is to start the Sinatra server at system start. This will ensure that, should our server crash and restart, our Sinatra server will restart and be able to update our blog without having to log in.
+
+We will be using a handy program called `tmux` to do this.  Tmux is a program that allows terminals to be 'detached' (run in the background) and continue without the terminal window being open. Let's write a cron script to start our Sinatra server.
+
+```
+#!/bin/bash
+# webhooks/start-server.cron
+
+/bin/sleep 5
+
+/usr/bin/tmux new-session -d -s webhooks-server
+/usr/bin/tmux send -t webhooks-server "ruby /home/student/webhooks/server.rb -o 0.0.0.0 -p 1989" C-m
+```
+
+In this script, we create a new tmux session and call it `webhooks-server`. We then tell the instance to type `ruby /home/your-name/webhooks/server.rb -o 0.0.0.0 -p 6789` and then hit enter (`C-m`).  Test to make sure you didn't make any spelling errors by running `./webhooks-server.cron`. You can check to make sure it's working by attaching the tmux session with `tmux a`. You should see the typical Sinatra server output. To detach the tmux session (keep running in background) you will need to type `CTRL` - `b` + `d`, or to close the tmux session, just `CTRL` - `d`.
+
+With the script working, we can enable it to start at system start by adding it to our crontabs. From your terminal:
+
+```
+$ crontab -e
+```
+
+then add the following at the bottom of the file:
+
+```
+@reboot /home/your-name/webhooks/start-server.cron
+```
+
+That's it. You now have an automatic build process for your blog! Well done!
+
+### Conclusion
+
+I hope that this tutorial has taught you something about the use of Github webhooks.  They are very useful in the world of automation and are highly customizable.  You can add specific event triggers to make them even more customizable.  If you have any questions please feel free to reach out to me at the email above!
