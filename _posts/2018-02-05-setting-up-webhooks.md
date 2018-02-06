@@ -32,7 +32,7 @@ The first thing we need to do is set up a web server on our host to listen for a
 
 Inside of a new `webhooks` folder, let's create a new file, `server.rb`
 
-```
+```ruby
 # webhooks/server.rb
 require 'sinatra'
 require 'json'
@@ -50,7 +50,7 @@ Now open your web browser and go to `http://localhost:6789/testing` and you shou
 
 Now that our server is running we can configure it to listen for the webhooks.  Let's create a new route on the server for this purpose:
 
-```
+```ruby
 # webhooks/server.rb
 require 'sinatra'
 require 'json'
@@ -85,7 +85,7 @@ With the Webhook created, go back into it by selecting the "Edit" button. At the
 ### Automagically building on update
 Now that our server is running and accepting webhook messages, we can start automating the build process.  In a typical setup, jekyll blogs are built by issuing the `jekyll build` command from the root directory of the blog.  Let's make a new shell script to do this for us:
 
-```
+```bash
 #!/bin/bash
 
 # webhooks/update-blog.sh
@@ -102,7 +102,7 @@ Test the above script by running `./update-blog` in your terminal.
 
 We can now update our server to run the script when a new webhook is received:
 
-```
+```ruby
 # webhooks/server.rb
 require 'sinatra'
 require 'json'
@@ -120,7 +120,7 @@ end
 
 Test it out by going to your Github repo's webhooks page and clicking "Redeliver." Your server should now accept the message and update your blog:
 
-```
+```bash
 Changing Directories
 Pulling Deploy Branch
 From github.com:your-github-name/blog
@@ -145,7 +145,7 @@ That's great we now have an auto-updating blog, but what if we want to write a d
 
 Each time Github sends a webhook, it will send some information along with it.  We can print this information by adding to our `server.rb` file:
 
-```
+```ruby
 ...
 post '/update-blog' do
   # system('/home/your-name/webhooks/update-blog.sh')
@@ -156,7 +156,7 @@ end
 
 The branch information we are looking for should be the first data to be sent: `{"ref"=>"refs/heads/deploy" ...`.  We can add a simple `if` statement to our server to check if we deployed to the `deploy` branch:
 
-```
+```ruby
 # webhooks/server.rb
 require 'sinatra'
 require 'json'
@@ -184,7 +184,7 @@ The last thing we need to do is to start the Sinatra server at system start. Thi
 
 We will be using a handy program called `tmux` to do this.  Tmux is a program that allows terminals to be 'detached' (run in the background) and continue without the terminal window being open. Let's write a cron script to start our Sinatra server.
 
-```
+```bash
 #!/bin/bash
 # webhooks/start-server.cron
 
@@ -198,13 +198,13 @@ In this script, we create a new tmux session and call it `webhooks-server`. We t
 
 With the script working, we can enable it to start at system start by adding it to our crontabs. From your terminal:
 
-```
+```bash
 $ crontab -e
 ```
 
 then add the following at the bottom of the file:
 
-```
+```bash
 @reboot /home/your-name/webhooks/start-server.cron
 ```
 
