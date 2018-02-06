@@ -3,6 +3,7 @@ title: Triple Nested Forms in Rails 5
 layout: post
 date: 2017-09-05
 feature-img: "assets/img/sample_feature_img.png"
+tags: rails forms
 ---
 
 There are countless videos out there showing you how to make a single nested form. That is, a form that accepts two models. This tutorial is different in that it shows you how to make a 3+ nested form. Let’s get started.
