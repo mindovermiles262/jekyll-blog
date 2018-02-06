@@ -145,7 +145,7 @@ That's great we now have an auto-updating blog, but what if we want to write a d
 
 Each time Github sends a webhook, it will send some information along with it.  We can print this information by adding to our `server.rb` file:
 
-```
+```ruby
 ...
 post '/update-blog' do
   # system('/home/your-name/webhooks/update-blog.sh')
