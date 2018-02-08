@@ -11,9 +11,7 @@ This can be done by enabling the setting under:
 
 General Settings > Player > Videos > Sync playback to display
 
-Then we have to upload our new `keymap.xml` to `/storage/.kodi/userdata/keymaps/`. We can do this however works for you (I find using SSH or SFTP is easiest)
-
-Create the `keyboard.xml` file with the following content:
+Then we have to create a new keymap. Create a new file, `keyboard.xml` and add the following content:
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -33,5 +31,6 @@ Create the `keyboard.xml` file with the following content:
 </keymap>
 ```
 
-Now just restart your Pi and you should be able to use the `[` key on your keybaord to decrease the playback speed, and `]` to increase the playback speed!
+Now, just upload `keyboard.xml` to your Raspberry Pi under the `/storage/.kodi/userdata/keymaps` directory. I find using SSH or SFTP easiest.
 
+Lastly, just restart your Pi and you should now be able to use the `[` key on your keyboard to decrease the playback speed, and `]` to increase the playback speed!
