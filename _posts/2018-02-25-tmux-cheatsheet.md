@@ -11,8 +11,10 @@ tmux is a powerful command line tool that allows sessions to run in the backgrou
 - `tmux ls` (or `tmux list-sessions`) - List sessions 
 - `tmux new -s session-name` - Create new session
 - `Ctrl-b d` - Detach from session 
-- `tmux attach -t [session name]` - Attach to session `tmux kill-session -t session-name` - Kill session
+- `tmux attach -t [session name]` - Attach to session 
+- `tmux kill-session -t session-name` - Kill session
 
+### Inside Session
 - `Ctrl-b c` - Create new window 
 - `Ctrl-b d` - Detach current client 
 - `Ctrl-b l` - Move to previously selected window 
