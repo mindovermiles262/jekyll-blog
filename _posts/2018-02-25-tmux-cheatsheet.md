@@ -32,10 +32,11 @@ tags: automation tmux linux
 - `Ctrl-b w` - List all windows / window numbers
 - `Ctrl-b window number` - Move to the specified window number (the default bindings are from 0 -- 9) 
 
-# Tiling Commands 
+### Tiling Commands 
 - `Ctrl-b %` - Split the window vertically
 - `Ctrl-b "` - Split window horizontally
 - `Ctrl-b o` - Goto next pane
 - `Ctrl-b q` - Show pane numbers
 - `Ctrl-b {` - Move the current pane left 
 - `Ctrl-b }` - Move the current pane right
+
