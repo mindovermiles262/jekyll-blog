@@ -5,13 +5,13 @@ layout: post
 tags: automation tmux linux
 ---
 
-#### (Because I can never remember the commands)
+tmux is a powerful command line tool that allows sessions to run in the background.  I often use it when logging into a remote server and have a long-running process that needs to stay active. Without tmux I would have to leave my local terminal open which is something I don't want to do.  That being said, I can never remember the tmux commands so I wrote this cheat sheet for a quick reference.
 
 ### Session Management 
 - `tmux ls` (or `tmux list-sessions`) - List sessions 
 - `tmux new -s session-name` - Create new session
 - `Ctrl-b d` - Detach from session 
-- `tmux attach -t [session name]` - Attach to session
+- `tmux attach -t [session name]` - Attach to session 
 - `tmux kill-session -t session-name` - Kill session
 
 
