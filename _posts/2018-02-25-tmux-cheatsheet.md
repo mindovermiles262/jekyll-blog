@@ -14,6 +14,7 @@ tags: automation tmux linux
 - `tmux attach -t [session name]` - Attach to session
 - `tmux kill-session -t session-name` - Kill session
 
+
 - `Ctrl-b c` - Create new window 
 - `Ctrl-b d` - Detach current client 
 - `Ctrl-b l` - Move to previously selected window 
@@ -25,12 +26,14 @@ tags: automation tmux linux
 - `Ctrl-b o` - Switch to the next pane 
 - `Ctrl-b ?` - List all keybindings 
 
+
 ### Moving Between Windows
 - `Ctrl-b n` - Move to the next window
 - `Ctrl-b p` - Move to the previous window
 - `Ctrl-b l` - Move to the previously selected window
 - `Ctrl-b w` - List all windows / window numbers
 - `Ctrl-b window number` - Move to the specified window number (the default bindings are from 0 -- 9) 
+
 
 ### Tiling Commands 
 - `Ctrl-b %` - Split the window vertically
