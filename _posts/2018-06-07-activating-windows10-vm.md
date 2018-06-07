@@ -7,7 +7,7 @@ tags: windows vm
 
 I really tried. I gave Windows 10 a solid month of use before deciding that I couldn't keep using it. It was a tough decision because I use Windows so much for my work. I needed to install Windows 10 inside of a Virtual Machine.
 
-After installing everything and getting it up and running, I was having troubles activating the installation of Windows 10 from our KVM Server at work.
+After installing everything and getting it up and running, I was having troubles activating the installation of Windows 10 from our KVM Server at work. After searching the internet, I came across [this article from TechRepublic](https://www.techrepublic.com/article/how-to-install-windows-10-in-a-vm-on-a-linux-machine/) which provided a working solution.
 
 KVM Servers work on a hardware signature which activates the Windows installation per hardware device. By using a Virtual Machine the signature had changed and was invalid for activating windows. The solution? Upload your signature into the VM and activate.
 
