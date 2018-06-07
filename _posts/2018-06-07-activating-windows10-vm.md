@@ -13,12 +13,12 @@ KVM Servers work on a hardware signature which activates the Windows installatio
 
 ## How To
 
-* From the linux host machine, install `acpica-tools`
+- From the linux host machine, install `acpica-tools`
 
-* Once installed, run `sudo acpidump -n MSDM`
+- Once installed, run `sudo acpidump -n MSDM`
 
-* In the output, look for the 25-Digit Alpha-numeric signature spanning several lines on the rightmost of the output. This is the product key you need to activate Windows.
+- In the output, look for the 25-Digit Alpha-numeric signature spanning several lines on the rightmost of the output. This is the product key you need to activate Windows.
 
-* Inside of the Windows VM, Start > Search for "Activation"
+- Inside of the Windows VM, Start > Search for "Activation"
 
-* Click on "Change Product Key" and input the signature key you obtained from the host computer. You should now be able to activate Windows 10.
+- Click on "Change Product Key" and input the signature key you obtained from the host computer. You should now be able to activate Windows 10.
