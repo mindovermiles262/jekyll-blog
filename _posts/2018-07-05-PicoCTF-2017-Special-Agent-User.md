@@ -15,7 +15,7 @@ Search through results to find valid User Agent String.  Copy this string and pa
     http://www.useragentstring.com./index.php
 
 
-![Image](./../assets/img/2018-07-05-PicoCTF-Special-Agent-User01.png)
+[Image]({{ "/assets/img/2018-07-05-PicoCTF-Special-Agent-User01.png" }})
 
 `User-Agent: Mozilla/5.0 (Windows; U; MSIE 9.0; WIndows NT 9.0; en-US))`
 
