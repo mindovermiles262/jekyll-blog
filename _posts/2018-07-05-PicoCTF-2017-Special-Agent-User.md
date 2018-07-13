@@ -1,5 +1,5 @@
 ---
-title: PicoCTF - Special Agent User
+title: PicoCTF 2017 - Special Agent User
 date: 2018-07-05
 layout: post
 tags: PicoCTF CTF Kali

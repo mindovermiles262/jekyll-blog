@@ -2,7 +2,7 @@
 title: PicoCTF 2017 - Digital Camouflage
 date: 2018-07-05
 layout: post
-tags: PicoCTF Kali
+tags: PicoCTF CTF Kali
 ---
 
 Open `data.pcap` in Wireshark
