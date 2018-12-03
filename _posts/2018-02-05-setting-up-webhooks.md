@@ -2,7 +2,7 @@
 title: Setting up Github Web Hooks
 date: 2018-02-05
 layout: post
-tags: automation github jekyll
+tags: Automation Devops Ruby
 ---
 
 Setting up Webhooks with Github is a simple way to start many common tasks when deploying a website. In this tutorial I will be showing you how to create an automated script to deploy your Jekyll blog when a merge occurs on a specified branch.

@@ -2,7 +2,6 @@
 layout: post
 title: init (git it?)
 date: 2017-02-03
-tags: general
 ---
 
 Today is the start of something new. Let me explain –

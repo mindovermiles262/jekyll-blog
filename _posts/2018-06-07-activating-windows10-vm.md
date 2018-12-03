@@ -2,7 +2,7 @@
 title: Activating Windows 10 inside a Virtual Machine
 date: 2018-06-07
 layout: post
-tags: windows vm
+tags: Windows
 ---
 
 I really tried. I gave Windows 10 a solid month of use before deciding that I couldn't keep using it. It was a tough decision because I use Windows so much for my work. I needed to install Windows 10 inside of a Virtual Machine.
