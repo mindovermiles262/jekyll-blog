@@ -2,7 +2,7 @@
 title: PicoCTF 2017 - Special Agent User
 date: 2018-07-05
 layout: post
-tags: PicoCTF CTF Kali
+tags: [PicoCTF, CTF, Writeups]
 ---
 
 # Special Agent user
