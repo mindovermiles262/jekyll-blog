@@ -92,7 +92,7 @@ In some cases, additional information can be obtained with whois:
 
 [Netcraft](https://searchdns.netcraft.com/) is a web-based OSINT tool we can use to find the IP address of a website. It can also provide other information about the hosting provider, SPF Records, and (maybe most importantly) the tech stack of the website. We can use all of this later
 
-![Netcraft Screenshot](/assets/img/osint-netcraft.png)
+![Netcraft Screenshot]({{ "/assets/img/osint-netcraft.png" }})
 
 
 ## nslookup
