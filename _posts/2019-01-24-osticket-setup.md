@@ -5,8 +5,7 @@ layout: post
 tags: Linux SysAdmin
 ---
 
-# Secure installtion of osTicket 
-## on Ubuntu 18.04 with Nginx and MySQL
+## Using Ubuntu 18.04 with Nginx and MySQL
 
 At my work we had been using a crappy ticketing system. It took more time to close tickets than to solve the actual issues inside of the ticket. I ended up writing a selenium script to automate the task but it was still annoying. When I returne from vacation one time I ran the script against the 80 tickets in the queue from when I was gone. It took 4 1/2 hours to run.  It was time for a new ticketing system.
 
