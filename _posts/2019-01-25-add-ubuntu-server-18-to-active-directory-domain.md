@@ -5,8 +5,6 @@ layout: post
 tags: Linux Windows SysAdmin
 ---
 
-# Testing Automatic Deployment of BLog
-
 `realmd` is an "on demand system DBus service which allows callers to configure network authentication and domain membership".  It is used to allow users to log into a Linux server using their AD domain credentials
 
 `realmd` is a wrapper that configures `SSSD` or `Winbind` behind the scenes to do the actual network authentication and user account lookups.
