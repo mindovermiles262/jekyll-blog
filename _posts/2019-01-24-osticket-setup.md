@@ -20,17 +20,29 @@ Awesome. Let's get started!
 I will be starting from a standard installation of Ubuntu 18.04 Server. If you're following along you should do this as well.
 
 1. Enable UNIVERSE in apt:
+
     `sudo add-apt-repository universe` OR 
+
     edit the file by hand: edit `/etc/apt/sources.list` by appending `universe` on the end of all 3 entries
+
 2. Update and Upgrade packages:
+
     `sudo apt-get update && sudo apt-get upgrade -y`
+
 3. Install MySQL
+
     `sudo apt-get install mysql-server`
+
 4. Install PHP:
+
     `sudo apt-get install php php-fpm php-pear php-imap php-apcu php-cgi php-common php-mbstring php-net-socket php-gd php-xml-util php-mysql php-gettext php-bcmath php-intl`
+
 4. Install Nginx
+
     `sudo apt-get install nginx`
+
 5. Install Miscellanious Packages:
+
     `sudo apt-get install unzip wget apt-utils`
 
 ### Setting up MySQL
