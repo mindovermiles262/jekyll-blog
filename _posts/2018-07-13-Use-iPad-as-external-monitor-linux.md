@@ -2,7 +2,8 @@
 title: Use iPad as External Monitor in Linux
 date: 2018-07-13
 layout: post
-tags: Linux 
+author: andy
+categories: [ linux ] 
 ---
 
 Sometimes you just need a bit of extra space on your desktop. Perhaps you're debugging some CSS and think it would be useful to have your developer tools open on the side.  Instead of digging out a second monitor, hooking it up, and having to sit at a desk, why not use your iPad as a second display?  In this tutorial I will show you just how to set that up.

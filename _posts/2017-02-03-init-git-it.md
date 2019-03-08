@@ -2,6 +2,9 @@
 layout: post
 title: init (git it?)
 date: 2017-02-03
+author: andy
+categories: [ "web development" ]
+image: assets/images/init.png
 ---
 
 Today is the start of something new. Let me explain –
@@ -9,6 +12,8 @@ Today is the start of something new. Let me explain –
 At the start of each year I set one resolution that will take a year to complete. Last year, for example, I resolved to run 2016km (1252 miles). That’s 3.4 miles. Everyday. I met my goal.
 
 This year is going to take things in an entirely different direction. I resolve to become a web developer by the end of 2017.
+
+> I resolve to become a web developer by the end of 2017.
 
 It’s going to be very challenging, and I’m only beginning to understand some of the challenges in achieving this goal. The past month I’ve spent pouring over “Web Development 101” from [The Odin Project](http://www.theodinproject.com/), an open-source web developer curriculum compiling all the best lessons from around the web. This first part, Web Development 101, contains mini-segments for all of the languages in the project. I’ve already learned a fair amount from each HTML, CSS, JavaScript, Ruby, and Ruby on Rails Framework. I also have done some independent studies in Python.
 

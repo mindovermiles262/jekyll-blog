@@ -2,12 +2,13 @@
 title: Self-Signed SSL
 date: 2019-01-24
 layout: post
-tags: Linux DevOps
+author: andy
+categories: [ linux, "system administration" ] 
 ---
 
 Sometimes you're working on an internal network and you need to enable SSL. Why? Because you don't want your credentials sniffed by anyone on the network.
 
-Unfortunatly, most SSL certificates cost money and cerbot needs public DNS to "verify" your domain.  The solution? Create a self-signed certificate.
+Unfortunately, most SSL certificates cost money and cerbot needs public DNS to "verify" your domain.  The solution? Create a self-signed certificate.
 
 This guide will walk you through setting up a self-signed SSL certificate. It won't get you past the "This Site is Insecure" warning on Chrome, but it will enable encrypted connections between client and server.
 

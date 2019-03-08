@@ -2,7 +2,8 @@
 title: Open Source Intelligence
 date: 2018-12-04
 layout: post
-tags: Linux OSCP
+author: andy
+categories: [linux, OSCP ]
 ---
 
 Being able to research and learn everthing about your target is a mission-critical aspect of any penetration test.  One of the ways to gather information about a target is through Open Source Intelligence, or OSINT.  There are two main forms of OSINT: active and passive.  Active OSINT occurs when your computer makes some sort of connection to the target computer.  Passive OSINT uses other services to gather this data.  In this post I'll walk you through the basics of Passive OSINT

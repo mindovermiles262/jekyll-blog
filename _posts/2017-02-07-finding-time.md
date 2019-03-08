@@ -2,6 +2,8 @@
 title: Finding Time
 layout: post
 date: 2017-02-07
+author: andy
+categories: [ self-help ]
 ---
 
 I get it. We’re all busy people. Working, commuting, eating, sleeping, relaxing, seeing friends and family, or having fun; they all take time. Where does learning to code fit into all of this?

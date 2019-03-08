@@ -2,7 +2,8 @@
 title: Postgres Foreign Keys and References
 layout: post
 date: 2017-07-26
-tags: Database Rails
+author: andy
+categories: [ rails ]
 ---
 
 Few things in the world are more frustrating to a developer as when you push your code to Heroku, and it does not work. Why? Because you changed databases from SQLite3 to PostgreSQL.

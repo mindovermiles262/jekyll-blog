@@ -1,8 +1,9 @@
 ---
-title: Increasing Playback Speed on Kodi LibreELEC on Raspberry Pi
+title: "Increasing Playback Speed on Kodi LibreELEC on Raspberry Pi"
 layout: post
 date: 2018-02-02
-tags: Kodi Raspberry-Pi
+author: andy
+categories: [ "raspberry pi" ]
 ---
 
 Increasing the playback speed of a video has never been easier with Kodi on your Raspberry Pi.  To enable this, we must do two things. First, we need to enable playback syncing.

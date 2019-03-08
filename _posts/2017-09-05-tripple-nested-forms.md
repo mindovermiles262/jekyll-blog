@@ -1,14 +1,16 @@
 ---
-title: Triple Nested Forms in Rails 5
 layout: post
+title: Triple Nested Forms in Rails 5
 date: 2017-09-05
-feature-img: "assets/img/sample_feature_img.png"
-tags: Rails
+image: "assets/images/nesting.jpg"
+author: andy
+categories: [ rails, "web development" ]
+featured: true
 ---
 
 There are countless videos out there showing you how to make a single nested form. That is, a form that accepts two models. This tutorial is different in that it shows you how to make a 3+ nested form. Let’s get started.
 First, we’ll make a new rails app, `$ rails new nested-forms` and enter into the directory.
-To complete the nesting, we will be useing three models, show, season, and episode. Each show has many seasons which have many episodes
+To complete the nesting, we will be using three models, show, season, and episode. Each show has many seasons which have many episodes
 
 Let’s generate the first model:
 
@@ -146,4 +148,4 @@ Now, migrate the changes. When you fire up the server and go to `/shows/new` you
 To keep nesting, just repeat the above instructions again until you pass out.
 
 ## Conclusion
-I hope that you find this article useful for developing rails applications. If you have any questions or comments feel free to leave a comment below, or tweet at me: @mindovermiles26
+I hope that you find this article useful for developing rails applications. If you have any questions or comments feel free to leave a comment below, or tweet at me: @andyduss

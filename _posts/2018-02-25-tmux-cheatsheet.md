@@ -2,7 +2,8 @@
 title: tmux Cheat Sheet
 date: 2018-02-25
 layout: post
-tags: Automation Linux
+author: andy
+categories: [ linux ]
 ---
 
 tmux is a powerful command line tool that allows sessions to run in the background.  I often use it when logging into a remote server and have a long-running process that needs to stay active. Without tmux I would have to leave my local terminal open which is something I don't want to do.  That being said, I can never remember the tmux commands so I wrote this cheat sheet for a quick reference.

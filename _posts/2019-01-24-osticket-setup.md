@@ -2,7 +2,8 @@
 title: Secure Installation of OSTicket
 date: 2019-01-24
 layout: post
-tags: Linux SysAdmin
+author: andy
+categories: [linux, "system administration" ]
 ---
 
 ## Using Ubuntu 18.04 with Nginx and MySQL
