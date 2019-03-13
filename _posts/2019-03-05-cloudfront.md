@@ -1,4 +1,11 @@
-# CloudFront
+---
+title: CloudFront
+date: 2019-03-05
+layout: post
+author: andy
+image: assets/images/cloudfront.png
+categories: [ aws, notes ]
+---
 
 CloundFront is Amazon's CDN. It's a system of distributed servers that deliver content to a user based on the geographic location of the user, content origin, and the delivery server.
 
@@ -12,7 +19,7 @@ CloundFront is Amazon's CDN. It's a system of distributed servers that deliver c
 
 ## How it works
 
-UserA in California wants a video file that's stored in the UK. UserA requests the video from the edge location closest to them. That edge location retreives and caches the video file from the UK. UserB, also in California, requests the same video file. Instead of retreiving the file from the UK, UserB is able to get the file from the edge location.
+User-A in California wants a video file that's stored in the UK. User-A requests the video from the edge location closest to them. That edge location retrieves and caches the video file from the UK. User-B, also in California, requests the same video file. Instead of retrieving the file from the UK, User-B is able to get the file from the edge location.
 
 ## Gotchas
 
