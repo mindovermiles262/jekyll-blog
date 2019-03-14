@@ -193,6 +193,21 @@ curl http://169.254.169.254/latest/meta-data/
 curl http://169.254.169.254/latest/meta-data/public-ipv4
 ```
 
+# EFS (Elastic File System)
+
+EFS is a file storage service for EC2 instances. It provides a simple interface to create and configure file systems. EFS, storage is dynamic. It grows and shrinks automatically so your applications have the storage they need, when they need it.
+
+EFS grows on EBS volumes, but allows you to attach 2+ EC2 Instances. It uses BLOCK-BASED Storage.
+
+### Features
+
+* Supports NFSv4 Protocol
+* You only pay for what you use
+* Can Scale up to petabytes
+* Supports thousands of NFS Connections
+* Data stored across multiple AZs within a region
+* Read after Write Consistancy
+
 # Exam Hints
 
 * Termination Protection is OFF by default.
