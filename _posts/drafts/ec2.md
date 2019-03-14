@@ -181,6 +181,18 @@ You can also set alarms that notify you when a particular event occurs or thresh
 
 Cloudwatch will also log any changes - helping you aggregate, monitor, and store logs. "CloudTrail" is a different AWS resource which is for Auditing of your entire AWS environment (Creating new users, New S3 buckets, etc.).
 
+# Metadata
+
+We use a simple `curl` url to gather information about your EC2 instance:
+
+```
+# Listing of available parameters:
+curl http://169.254.169.254/latest/meta-data/
+
+# Get EC2 Instance Meta Data:
+curl http://169.254.169.254/latest/meta-data/public-ipv4
+```
+
 # Exam Hints
 
 * Termination Protection is OFF by default.
