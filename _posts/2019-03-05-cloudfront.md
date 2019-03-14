@@ -3,7 +3,7 @@ title: CloudFront
 date: 2019-03-05
 layout: post
 author: andy
-image: assets/images/cloudfront.png
+image: assets/images/cloudfront.svg
 categories: [ aws, notes ]
 ---
 
