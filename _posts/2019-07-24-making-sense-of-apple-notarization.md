@@ -3,8 +3,8 @@ title: Making Sense of Catalina's Notarization Requirements
 date: 2019-07-24
 layout: post
 author: andy
-image: 
-categories: [ mac, sysadmin ]
+image: assets/images/notarize.jpg
+categories: [ mac, "system administration" ]
 ---
 
 A few weeks ago, Apple announced MacOS 10.15 - Catalina.  Along with this they also introduced a requirement to sign and notarize all `.pkg`, `.dmg`, kexts, and Applications.
