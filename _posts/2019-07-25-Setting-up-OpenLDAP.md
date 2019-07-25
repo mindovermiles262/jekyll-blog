@@ -55,6 +55,8 @@ Enter an "Administrator" password when prompted, `foobar123`
     cn: accounting
     gidNumber: 5001
 
+Then import them:
+
     $ ldapadd \
         -x \                             #=> Simple Auth (not SASL)
         -D cn=admin,dc=ldap,dc=mydomain,dc=com \  #=> Use this account to make changes
@@ -87,6 +89,8 @@ Enter an "Administrator" password when prompted, `foobar123`
     loginShell: /bin/bash
     homeDirectory: /home/mbp/aduss
 
+and import again:
+
     $ ldapadd -x -D cn=admin,dc=ldap,dc=mydomain,dc=com -W -f ldap_aduss.ldif 
     
     Enter LDAP Password: [foobar123]
@@ -99,6 +103,8 @@ Enter an "Administrator" password when prompted, `foobar123`
         -LLL \                                 #=> Removes unnecessary output, see below
         -b dc=ldap,dc=mydomain,dc=com \   #=> Searchbase, start the ldap query here
         'uid=aduss' cn gidNumber               #=> Search for 'uid=aduss', display 'cn' and 'gidNumber'
+
+Digging into what `-LLL` does:
 
     $ man ldapsearch
     
