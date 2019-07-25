@@ -3,7 +3,7 @@ title: Setting up OpenLDAP
 date: 2019-07-25
 layout: post
 author: andy
-image: assets/images/ldap.jpg
+image: assets/images/ldap.png
 categories: [ linux, "system administration" ]
 ---
 
