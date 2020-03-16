@@ -41,7 +41,7 @@ sudo /Applications/VirtualBox.app/Contents/MacOS/VirtualBox
 
 This will open up the Virtualbox GUI as the root user. Note: DO NOT USE THIS METHOD for running normal Virtual Machines! SpinRite needs low-level access that only sudo can provide.
 
-3. Create a new DOS Virtual Machine
+### Create a new DOS Virtual Machine
   * Click 'New'
     * Name: `Spinrite`
     * Machine Folder: `/var/root/VirtualBox VMs`
@@ -51,7 +51,7 @@ This will open up the Virtualbox GUI as the root user. Note: DO NOT USE THIS MET
   * Hard Disk: `Do not add a virtual hard disk`
     * VBox will warn you that you're creating a VM without a HDD, Click `Continue`
 
-4. Open the new VM's Settings > Storage
+### Open the new VM's Settings > Storage
   * Select "Controller: IDE" and choose the icon to "Adds a Hard Disk"
     * Choose "Add" from the top, then find and open the `rawDisk.vmdk` we created earlier on your desktop.
   * Click on the "Empty" CD-ROM drive, Click on the CD-ROM icon next to "Optical Drive" on the right side. Select `Choose a disk file`
@@ -59,4 +59,4 @@ This will open up the Virtualbox GUI as the root user. Note: DO NOT USE THIS MET
 
 <img src="https://i.imgur.com/IVKHYaD.png" width="85%" style="border:1px solid black;">
 
-5. Run the VM
+### Run the VM
