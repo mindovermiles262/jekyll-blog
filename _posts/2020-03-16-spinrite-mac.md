@@ -3,6 +3,7 @@ title: SpinRite 6 on MacOS External Drive
 date: 2020-03-16
 layout: post
 author: andy
+image: assets/images/apple.png
 categories: [macos, "system administration"]
 ---
 
@@ -60,3 +61,5 @@ This will open up the Virtualbox GUI as the root user. Note: DO NOT USE THIS MET
 <img src="https://i.imgur.com/IVKHYaD.png" width="85%" style="border:1px solid black;">
 
 ### Run the VM
+
+When you start the VM, SpinRite should automagically see the drive. Enter your SpinRite settings and let the magic happen.
